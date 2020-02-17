@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <title>operacje na stringach</title>
+    <style media="screen">
+      td{padding: 10px;}
+    </style>
+  </head>
+  <body>
+
+    <input type="text" id="text">
+    <button onclick="dzialaj()">Wyślij tekst</button><hr>
+
+    <div id="pole"></div>
+
+    <script type="text/javascript">
+      function dzialaj()
+      {
+        var text = document.getElementById("text").value;
+
+        pole.innerHTML+="<table><tr><th>Metoda:</th><th>Wynik:</th></tr>"+
+
+                        "<tr><td>big()"+"</td><td>"+text.big()+"</td></tr>"+
+                        "<tr><td>bold()"+"</td><td>"+text.bold()+"</td></tr>"+
+                        "<tr><td>italics()"+"</td><td>"+text.italics()+"</td></tr>"+
+                        "<tr><td>small()"+"</td><td>"+text.small()+"</td></tr>"+
+                        "<tr><td>sub()"+"</td><td> x"+text.sub()+"</td></tr>"+
+                        "<tr><td>strike()"+"</td><td>"+text.strike()+"</td></tr>"+
+                        "<tr><td>sup()"+"</td><td> x"+text.sup()+"</td></tr>"+
+                        "<tr><td>fontcolor()"+"</td><td>"+text.fontcolor("#ff0000")+"</td></tr>"+
+                        "<tr><td>fontsize()"+"</td><td>"+text.fontsize("12px")+"</td></tr><tr></tr>"+
+
+                        "<tr><td>charAt(0)"+"</td><td>"+text.charAt(0)+"</td></tr>"+ <!-- jaki znak występuje na pozycji ()-->
+                        "<tr><td>charCodeAt(0)"+"</td><td>"+text.charCodeAt(0)+"</td></tr>"+ <!-- jaka wartość znaku w Ascii występuje na pozcyji () -->
+                        "<tr><td>indexOf('a')"+"</td><td>"+text.indexOf('a')+"</td></tr>"+ <!-- znajduje podaną frazę i podaje gdzie pierwszy raz wystąpiła lub -1-->
+                        "<tr><td>lastIndexOf('z')"+"</td><td>"+text.lastIndexOf('z')+"</td></tr>"+ <!-- tak jak wyżej, lecz szuka od końca -->
+                        "<tr><td>match('abc')"+"</td><td>"+text.match('abc')+"</td></tr>"+ <!-- zwraca podaną frazę, jeżeli wystąpiła, lub null -->
+
+                        "<tr><td>substring(1,3)"+"</td><td>"+text.substring(1,3)+"</td></tr>"+
+                        "<tr><td>substr(2,2)"+"</td><td>"+text.substr(2,2)+"</td></tr>"+
+                        "<tr><td>slice(1,3)"+"</td><td>"+text.substring(1,3)+"</td></tr>"+
+
+                        "<tr><td>toLowerCase()"+"</td><td>"+text.toLowerCase()+"</td></tr>"+
+                        "<tr><td>toUpperCase()"+"</td><td>"+text.toUpperCase()+"</td></tr>"+
+                        "<tr><td>link('google.com')"+"</td><td>"+text.link('google.com')+"</td></tr>"+
+
+                        "<tr><td>concat(':D')"+"</td><td>"+text.concat(' :D')+"</td></tr>"+
+                        "<tr><td>replace('a','X')"+"</td><td>"+text.replace('a','X')+"</td></tr>"+
+
+                        "<tr><td>search('aaa')"+"</td><td>"+text.search('aaa')+"</td></tr>"+
+                        "<tr><td>length"+"</td><td>"+text.length+"</td></tr>";
+
+      }
+    </script>
+
+  </body>
+</html>
