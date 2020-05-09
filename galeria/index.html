@@ -1,0 +1,89 @@
+<html>
+    <meta charset="utf-8">
+    <head>
+        <style>
+          div
+          {
+            display: inline;
+            padding: 1.8%;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          #scroll
+          {
+            width:49%;
+            height:100px;
+            margin:auto;
+            background: #66a;
+            border-radius: 10px;
+            color: #fff;
+          }
+          #scroll:hover{background:#88f;color:#000;}
+          #photo
+          {
+              width:28%;
+              border: 1px solid black;
+          }
+          #a4{padding-left: 36%; padding-right: 36%;}
+        </style>
+    </head>
+    <body>
+
+      <div>
+
+        <div id="1"><img src="1.png" id="photo"></img></div> <!--photo1-->
+        <div id="2"><img src="2.png" id="photo"></img></div> <!--photo2-->
+        <div id="3"><img src="3.png" id="photo"></img></div> <!--photo3-->
+
+      </div><br>
+
+        <button id="scroll" onclick="previous()"><</button>
+        <button id="scroll" onclick="next()">></button>
+
+      <div id="a4"><img src="2.png" id="photo"></img></div> <!--photo2-->
+
+      <script>
+
+        var i = 1,j = 2,k = 3;
+
+        var div1 = document.getElementById('1'); //miejsce na stronie zdjęcia 1
+        var div2 = document.getElementById('2'); //miejsce na stronie zdjęcia 2
+        var div3 = document.getElementById('3'); //miejsce na stronie zdjęcia 3
+        var div4 = document.getElementById('a4'); //miejsce na stronie dolnego zdjęcia
+
+      function previous()
+      {
+        k = j;
+        j = i;
+        i -= 1;
+        if(i==0){i=7;}
+
+        var dir1 = '<img src="'+i+'.png" id="photo"></img>' //lokalizacja zdjęcia 1
+        var dir2 = '<img src="'+j+'.png" id="photo"></img>' //lokalizacja zdjęcia 2
+        var dir3 = '<img src="'+k+'.png" id="photo"></img>' //lokalizacja zdjęcia 3
+
+        div1.innerHTML = dir1;
+        div2.innerHTML = dir2;
+        div3.innerHTML = dir3;
+        div4.innerHTML = dir2;
+      }
+      function next()
+      {
+        i = j;
+        j = k;
+        k = k%7 + 1;
+
+        var dir1 = '<img src="'+i+'.png" id="photo"></img>' //lokalizacja zdjęcia 1
+        var dir2 = '<img src="'+j+'.png" id="photo"></img>' //lokalizacja zdjęcia 2
+        var dir3 = '<img src="'+k+'.png" id="photo"></img>' //lokalizacja zdjęcia 3
+
+        div1.innerHTML = dir1;
+        div2.innerHTML = dir2;
+        div3.innerHTML = dir3;
+        div4.innerHTML = dir2;
+      }
+      </script>
+
+    </body>
+</html>
